@@ -3,7 +3,7 @@
 
 
 template <class T>
-TQueue<T>::TQueue(int _size)
+TQueue<T>::TQueue (int _size)
 {
   if (_size > 0)
   {
