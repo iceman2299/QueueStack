@@ -1,17 +1,18 @@
-#include "tbitfield.h"
+#include "Tqueue.h"
 
 #include <gtest.h>
 
-TEST(TBitField, can_create_bitfield_with_positive_length)
+TEST(TQueue, can_create_queue_with_positive_length)
 {
-  ASSERT_NO_THROW(TBitField bf(3));
+  ASSERT_NO_THROW(TQueue(3));
 }
 
-TEST(TBitField, can_get_length)
+/*
+TEST(TQueue, can_get_count)
 {
-  TBitField bf(3);
+  int  q(3);
 
-  EXPECT_EQ(3, bf.GetLength());
+  EXPECT_EQ(3, q.Getcount());
 }
 
 TEST(TBitField, new_bitfield_is_set_to_zero)
@@ -309,3 +310,4 @@ TEST(TBitField, bitfields_with_different_bits_are_not_equal)
 
   EXPECT_NE(bf1, bf2);
 }
+*/
