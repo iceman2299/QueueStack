@@ -3,7 +3,7 @@
 
 
 template <class T>
-TQueue<T>::TQueue (int _size)
+inline TQueue<T>::TQueue(int _size)
 {
   if (_size > 0)
   {
@@ -17,7 +17,7 @@ TQueue<T>::TQueue (int _size)
 }
 
 template <class T>
-TQueue<T>::TQueue(const TQueue<T>& p)
+inline TQueue<T>::TQueue(const TQueue<T>& p)
 {
   size = p.size;
   start = p.start;
@@ -30,16 +30,16 @@ TQueue<T>::TQueue(const TQueue<T>& p)
 }
 
 template <class T>
-TQueue<T>::~TQueue()
+inline TQueue<T>::~TQueue()
 {
   delete[] data;
+  size = 0;
   start = 0;
   end = 0;
-  count = 0;
 }
 
 template <class T>
-void TQueue<T>::Push(T& p)
+inline void TQueue<T>::Push(T& p)
 {
   if (end < size)
   {
@@ -51,7 +51,7 @@ void TQueue<T>::Push(T& p)
 }
 
 template <class T>
-T TQueue<T>::Pull()
+inline T TQueue<T>::Pull()
 {
   T elem;
   if (start < size && start > 0)
@@ -65,13 +65,13 @@ T TQueue<T>::Pull()
 }
 
 template <class T>
-int TQueue<T>::GetCount()
+inline int TQueue<T>::GetCount()
 {
   return end - start;
 }
 
 template <class T>
-bool TQueue<T>::IsEmpty()
+inline bool TQueue<T>::IsEmpty()
 {
   if (start == end)
     return 1;
@@ -80,7 +80,7 @@ bool TQueue<T>::IsEmpty()
 }
 
 template <class T>
-bool TQueue<T>::IsFull()
+inline bool TQueue<T>::IsFull()
 {
   if (end == size)
     return 1;
