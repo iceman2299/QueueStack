@@ -4,17 +4,17 @@
 
 TEST(TQueue, can_create_queue_with_positive_length)
 {
-  ASSERT_NO_THROW(TQueue(3));
+  ASSERT_NO_THROW(TQueue<int> q(3));
 }
 
-/*
-TEST(TQueue, can_get_count)
+
+TEST(Queue, can_get_count)
 {
-  int  q(3);
+  TQueue<int> q(3);
 
-  EXPECT_EQ(3, q.Getcount());
+  EXPECT_EQ(0, q.GetCount());
 }
-
+/*
 TEST(TBitField, new_bitfield_is_set_to_zero)
 {
   TBitField bf(100);
