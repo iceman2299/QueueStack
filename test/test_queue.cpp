@@ -2,7 +2,7 @@
 
 #include <gtest.h>
 
-TEST(TQueue, can_create_queue_with_positive_length)
+TEST(Queue, can_create_queue_with_positive_length)
 {
   ASSERT_NO_THROW(TQueue<int> q(3));
 }
@@ -14,30 +14,33 @@ TEST(Queue, can_get_count)
 
   EXPECT_EQ(0, q.GetCount());
 }
+
+TEST(Queue, can_create_copy)
+{
+    TQueue<int> q(4);
+
+    ASSERT_NO_THROW(TQueue<int> cop = q);
+}
+
+TEST(Queue, can_push)
+{
+    TQueue<int> q(3);
+    int addelem = 5;
+    q.Push(addelem);
+    EXPECT_EQ(1, q.GetCount());
+}
+
+TEST(Queue, can_pull)
+{
+    TQueue<int> q(3);
+    int addelem = 5;
+    q.Push(addelem);
+    q.Pull();
+    EXPECT_EQ(1, q.IsEmpty());
+}
+
+
 /*
-TEST(TBitField, new_bitfield_is_set_to_zero)
-{
-  TBitField bf(100);
-
-  int sum = 0;
-  for (int i = 0; i < bf.GetLength(); i++)
-  {
-    sum += bf.GetBit(i);
-  }
-
-  EXPECT_EQ(0, sum);
-}
-
-TEST(TBitField, can_set_bit)
-{
-  TBitField bf(10);
-
-  EXPECT_EQ(0, bf.GetBit(3));
-
-  bf.SetBit(3);
-  EXPECT_NE(0, bf.GetBit(3));
-}
-
 TEST(TBitField, can_clear_bit)
 {
   TBitField bf(10);
