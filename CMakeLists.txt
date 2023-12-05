@@ -16,9 +16,6 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG ${CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEAS
 
 set(MP2_LIBRARY "${PROJECT_NAME}")
 set(MP2_TESTS   "test_${PROJECT_NAME}")
-set(MP2_INCLUDE "${CMAKE_CURRENT_SOURCE_DIR}/include")
-
-include_directories("${MP2_INCLUDE}" gtest)
 
 # BUILD
 add_subdirectory(src)
